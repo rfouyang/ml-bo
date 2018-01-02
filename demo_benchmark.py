@@ -3,14 +3,17 @@ from skopt import gp_minimize
 
 
 def func_square_1d(x):
+
+    # y = x^2    best 0
     x = np.array(x)
-    return (x.dot(x))
+    return x.dot(x)
 
 
 def func_square_3d(x):
+    # y = (x-0)^2 + (x-1)^2 + (x-2)^2    best 0,1,2
     c = np.arange(3)
     x = np.array(x) - c
-    return (x.dot(x))
+    return x.dot(x)
 
 
 def callback(info):
