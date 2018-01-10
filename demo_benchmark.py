@@ -10,7 +10,7 @@ def func_square_1d(x):
 
 
 def func_square_3d(x):
-    # y = (x-0)^2 + (x-1)^2 + (x-2)^2    best 0,1,2
+    # y = (x_1-0)^2 + (x_2-1)^2 + (x_3-2)^2    best 0,1,2
     c = np.arange(3)
     x = np.array(x) - c
     return x.dot(x)
@@ -34,7 +34,7 @@ def demo_1d():
                       n_restarts_optimizer=5,
                       xi=0.1,
                       kappa=1.96,
-                      noise="gaussian",
+                      noise=0.001,
                       n_jobs=1)
 
     print(res['x'])
@@ -59,14 +59,14 @@ def demo_3d():
                       n_restarts_optimizer=100,
                       xi=0.1,
                       kappa=1.96,
-                      noise="gaussian",
+                      noise=0.001,
                       n_jobs=1)
 
     print(res['x'])
 
 
 def main():
-    demo_1d()
+    #demo_1d()
     demo_3d()
 
 

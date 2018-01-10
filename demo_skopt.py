@@ -67,12 +67,11 @@ class DemoBO(object):
                           n_restarts_optimizer=5,
                           xi=0.01,
                           kappa=1.96,
-                          noise="gaussian",
+                          noise=0.001,
                           n_jobs=1)
 
-        print(res['space'])
         print(res['x'], res['fun'])
-        return res['x']
+
 
 
 def main():
